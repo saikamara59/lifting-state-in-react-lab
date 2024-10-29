@@ -2,7 +2,7 @@
 const BurgerStack = ({ stack, removeFromBurger }) => {
     return (
       <div>
-        <h2>Your Favorite Burger</h2>
+        <h2>Design Sai's Favorite Burger</h2>
         <ul>
         {stack.map((ingredient,index) => (
           <li
