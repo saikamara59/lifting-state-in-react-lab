@@ -33,6 +33,9 @@ const removeFromBurger = (index) => {
   setStack(stack.filter((_, a)=> a !== index))
 };
 
+const resetBurger = () => {
+  setStack([])
+}
   
   return (
     <main>
@@ -43,6 +46,7 @@ const removeFromBurger = (index) => {
     </div>
     <div className="column">
     <BurgerStack stack={stack} removeFromBurger={removeFromBurger}/>
+    <button onClick={resetBurger}>Reset Burger</button>
     </div>
       </section>
     </main>
