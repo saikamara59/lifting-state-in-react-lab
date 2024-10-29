@@ -1,42 +1,111 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+:root {
+  --background-color: #2e2e2e;
+  --text-color: #ffffff;
+  --primary-color: #f8b400;
+  --secondary-color: #f08700;
+  --button-bg: #333333;
+  --button-hover-bg: #444444;
+  --button-border: #777777;
+  --list-item-padding: 10px;
+  --border-radius: 8px;
+
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+
+html, body, #root {
+  height: 100%;
+  color: var(--text-color);
+  background-color: var(--background-color);
+
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
   text-align: center;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+section {
+  width: 80%;
+  display: flex;
+  gap: 20px;
+  justify-content: space-around;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.column {
+  background-color: #333333;
+  border-radius: var(--border-radius);
+  padding: 16px;
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+h2 {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 16px;
 }
 
-.card {
-  padding: 2em;
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 10;
+  width: 100%;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
-.read-the-docs {
-  color: #888;
+li {
+  border-radius: var(--border-radius);
+  font-weight: bold;
+  text-shadow: 0px 0px 2px #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
+
+li:hover {
+  background-color: var(--secondary-color);
+}
+
+button {
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: var(--border-radius);
+  background-color: var(--button-bg);
+  color: #fff;
+  border: 1px solid var(--button-border);
+  transition: background-color 0.3s ease;
+}
+
+
