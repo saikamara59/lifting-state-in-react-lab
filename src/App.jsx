@@ -2,7 +2,7 @@
 import BurgerStack from './components/BurgerStack';
 import IngredientList from './components/IngredientList';
 import { useState } from 'react';
-import '/src/index.css'; // Assuming your Tailwind styles are defined in index.css
+import '/src/index.css';
 
 export const availableIngredients = [
   { name: 'Kaiser Bun', color: 'saddlebrown' },
