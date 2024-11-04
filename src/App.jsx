@@ -1,7 +1,8 @@
-import './App.css';
+// import './App.css';
 import BurgerStack from './components/BurgerStack';
 import IngredientList from './components/IngredientList';
 import { useState } from 'react';
+import '/src/index.css'; // Assuming your Tailwind styles are defined in index.css
 
 export const availableIngredients = [
   { name: 'Kaiser Bun', color: 'saddlebrown' },
@@ -21,36 +22,42 @@ export const availableIngredients = [
 ];
 
 const App = () => {
-  
+  const [stack, setStack] = useState([]);
 
-  const [stack,setStack] = useState([])
+  const addToBurger = (ingredient) => {
+    setStack([...stack, ingredient]);
+  };
 
-const addToBurger = (ingredient) => {
-  setStack([...stack,ingredient])
-}
+  const removeFromBurger = (index) => {
+    setStack(stack.filter((_, a) => a !== index));
+  };
 
-const removeFromBurger = (index) => {
-  setStack(stack.filter((_, a)=> a !== index))
-};
+  const resetBurger = () => {
+    setStack([]);
+  };
 
-const resetBurger = () => {
-  setStack([])
-}
-  
   return (
-    <main>
-      <h1> My Burger Stacker</h1>
-      <section>
-        <div className="column">
-    <IngredientList ingredients ={availableIngredients} addToBurger={addToBurger}/>
-    </div>
-    <div className="column">
-    <BurgerStack stack={stack} removeFromBurger={removeFromBurger}/>
-    <button onClick={resetBurger}>Reset Burger</button>
-    </div>
+    <main className="w-full h-full bg-neutral-950 items-center p-5 flex flex-col">
+      <h1 className="text-center mb-20 text-amber-200 text-4xl uppercase tracking-wide">
+        My Burger Stacker
+      </h1>
+      <section className="w-full flex gap-5 justify-around">
+        <div className="bg-neutral-600 rounded-lg p-4 w-1/2 flex flex-col items-center">
+          <IngredientList ingredients={availableIngredients} addToBurger={addToBurger} />
+        </div>
+        <div className="bg-neutral-600 rounded-lg p-4 w-1/2 flex flex-col items-center">
+          <BurgerStack stack={stack} removeFromBurger={removeFromBurger} />
+          <button
+            className="cursor-pointer bg-blue-500 py-3 px-5 rounded-lg mt-4"
+            style={{ backgroundColor: '#fff7ed' }}
+            onClick={resetBurger}
+          >Reset Burger
+          </button>
+        </div>
       </section>
     </main>
   );
 };
 
 export default App;
+

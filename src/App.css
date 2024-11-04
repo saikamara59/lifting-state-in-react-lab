@@ -1,4 +1,4 @@
-* {
+/* * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -107,5 +107,5 @@ button {
   border: 1px solid var(--button-border);
   transition: background-color 0.3s ease;
 }
-
+ */
 
